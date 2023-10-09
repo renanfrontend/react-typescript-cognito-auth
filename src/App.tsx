@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { OlosCognitoAuthProvider, IOlosCognitoAuth, OlosCognitoAuthForm } from "@olostecnologia/olos-cognito-auth"
+
+
+const config:IOlosCognitoAuth = {
+
+  appId: "1hd7h1lssk84q253mpu3kaeu21",
+  xApiKey: "3EwVYhMYbLQ0qx9ynESP8nhB0=oZeXfRsy=qRR/-Rw9gt5g6wAICC?mD6r88WxRu",
+  tenantId: "eaglle-ad",
+  environment: "DEV",
+  locale: "pt-BR"
+}
 
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <OlosCognitoAuthProvider configuration={config} >
+        <OlosCognitoAuthForm />
+      </OlosCognitoAuthProvider>
     </div>
-  );
+    
+    
+  )
 }
 
 export default App;
